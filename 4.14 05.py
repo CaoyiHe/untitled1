@@ -12,3 +12,4 @@ print(test.append("a"))
 # 队列用法(导入from collections import deque)：append、popleft(可以把第一个字符去除  test.popleft（）)
 
 # 列表创建：list = [X*10 for] 使用方法：创建一个列表x = [1, 2, 3]   x =[x for x in range(10)] 输出的list为[0,1,2,xxx,10]
+1
