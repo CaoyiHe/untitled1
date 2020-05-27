@@ -1,8 +1,10 @@
+import select
 from asyncio import sleep
 from datetime import time
 from lib2to3.pgen2 import driver
 from telnetlib import EC
 from threading import Thread
+from tkinter.tix import Select
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -46,8 +48,10 @@ class Test_Advertising:
         self.driver.find_element_by_css_selector("[placeholder='广告主账户或ID']").click()
         self.driver.find_element_by_css_selector("[placeholder='广告主账户或ID']").send_keys(1)
         self.driver.find_element_by_css_selector('[class="el-link el-link--primary is-underline"]').click()  # 点击高级筛选
-        self.driver.find_element(By.CSS_SELECTOR, '.el-input__suffix').click()
-        # self.driver.find_element_by_name('冰川').click()
-        self.driver.find_element_by_css_selector('style="margin-bottom: -10px; margin-right: -10px;"').select_by_visible_text('冰川')
-
+        self.driver.find_element(By.CSS_SELECTOR, '[placeholder="广告商"]').click()
+        # self.driver.find_element(By.CSS_SELECTOR, 'body>.el-select-dropdown .el-select-dropdown__item').click()
+        # self.driver.find_element(By.CSS_SELECTOR, '[placeholder="代理商"]').click()
+        # self.driver.find_elements(By.CSS_SELECTOR, 'body>.el-select-dropdown')[1].find_element(By.CSS_SELECTOR,
+        #                                                                                        '.el-select-dropdown__item').click()
+        self.driver.find_element(By.XPATH, '/html/body/div[2]/div[1]/div[1]/ul/li[1]/span').click()
         self.driver.find_element(By.CSS_SELECTOR, '.el-icon-search').click()
